@@ -1,0 +1,48 @@
+:root{
+  --bg:#10151c; --panel:#171e28; --ink:#dde5ec; --sub:#8b98a5;
+  --accent:#57d992; --accent-soft:#1d2f26; --line:#2a3644; --note:#f2e7c9;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);
+  background:
+    linear-gradient(rgba(87,217,146,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(87,217,146,.045) 1px,transparent 1px),
+    var(--bg);
+  background-size:28px 28px,28px 28px,auto;
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.site-header{padding:30px 0 18px;text-align:center;border-bottom:1px dashed var(--accent);
+  background:rgba(87,217,146,.05)}
+.site-title{color:#eafff2;text-decoration:none;font-size:1.9rem;font-weight:700;
+  font-family:"SF Mono","Consolas",monospace;letter-spacing:.02em}
+.site-tagline{margin:4px 0 0;color:var(--accent);font-size:.85rem;letter-spacing:.2em}
+main{padding:24px 0 40px}
+h1{font-size:1.4rem;color:#eafff2}
+.controls{margin:18px 0 6px}
+#q{width:100%;padding:10px 14px;font-size:1rem;border:1px solid var(--line);
+  border-radius:8px;background:var(--panel);color:var(--ink)}
+.chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--accent);background:transparent;color:var(--accent);
+  border-radius:999px;padding:4px 14px;font-size:.9rem;cursor:pointer}
+.chip.is-active{background:var(--accent);color:#0b2015;font-weight:700}
+.count{color:var(--sub);font-size:.9rem}
+.cards{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--accent);
+  border-radius:8px;padding:14px 18px}
+.card-head{display:flex;justify-content:flex-start;gap:8px;align-items:center}
+.card-head time{margin-left:auto;color:var(--sub);font-size:.8rem;font-family:"Consolas",monospace}
+.badge.status{background:rgba(242,231,201,.12);color:var(--note)}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:4px;
+  padding:1px 8px;font-size:.78rem;font-weight:700}
+.card-head time{color:var(--sub);font-size:.8rem;font-family:"Consolas",monospace}
+.card-title{font-size:1.1rem;margin:8px 0 6px;color:#eafff2}
+.card-sec{margin:6px 0;font-size:.94rem}
+.card-sec .label{display:inline-block;min-width:4.5em;color:var(--accent);font-weight:700;font-size:.82rem}
+.card-sec.result{background:rgba(242,231,201,.06);border:1px dashed rgba(242,231,201,.35);
+  border-radius:6px;padding:6px 10px}
+.card-sec.result .label{color:var(--note)}
+.card-tags{margin:8px 0 0}
+.tag{color:var(--sub);font-size:.8rem;margin-right:4px}
+.empty{color:var(--sub);text-align:center;padding:24px 0}
+.site-footer{border-top:1px solid var(--line);padding:16px 0 28px;color:var(--sub);font-size:.9rem;text-align:center}
