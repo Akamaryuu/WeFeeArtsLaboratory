@@ -1,4 +1,5 @@
 :root{
+  color-scheme:light dark;
   --bg:#10151c; --panel:#171e28; --ink:#dde5ec; --sub:#8b98a5;
   --accent:#57d992; --accent-soft:#1d2f26; --line:#2a3644; --note:#f2e7c9;
 }
@@ -46,3 +47,61 @@ h1{font-size:1.4rem;color:#eafff2}
 .tag{color:var(--sub);font-size:.8rem;margin-right:4px}
 .empty{color:var(--sub);text-align:center;padding:24px 0}
 .site-footer{border-top:1px solid var(--line);padding:16px 0 28px;color:var(--sub);font-size:.9rem;text-align:center}
+
+/* ライトテーマ（端末設定に自動追従） — 白紙の方眼 */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f4f8f4; --panel:#ffffff; --ink:#22312a; --sub:#61756a;
+    --accent:#1d9e5f; --accent-soft:#dff2e6; --line:#c4d8cc; --note:#8a6d1f;
+    color-scheme:light;
+  }
+  body{background:
+    linear-gradient(rgba(29,158,95,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(29,158,95,.08) 1px,transparent 1px),
+    var(--bg);
+    background-size:28px 28px,28px 28px,auto}
+  .site-header{background:rgba(29,158,95,.06)}
+  .site-title{color:#0f3d24}
+  h1{color:#0f3d24}
+  .card-title{color:#0f3d24}
+  .chip.is-active{color:#fff}
+  .badge.status{background:rgba(138,109,31,.12)}
+  .card-sec.result{background:rgba(138,109,31,.06);border-color:rgba(138,109,31,.35)}
+}
+
+/* テーマ切り替えボタン＋手動指定（端末設定より優先） */
+.theme-toggle{position:fixed;right:14px;bottom:14px;z-index:50;width:44px;height:44px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:1.15rem;cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.3)}
+:root[data-theme="light"]{
+  --bg:#f4f8f4; --panel:#ffffff; --ink:#22312a; --sub:#61756a;
+  --accent:#1d9e5f; --accent-soft:#dff2e6; --line:#c4d8cc; --note:#8a6d1f;
+}
+[data-theme="light"] body{background:
+  linear-gradient(rgba(29,158,95,.08) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(29,158,95,.08) 1px,transparent 1px),
+  var(--bg);
+  background-size:28px 28px,28px 28px,auto}
+[data-theme="light"] .site-header{background:rgba(29,158,95,.06)}
+[data-theme="light"] .site-title{color:#0f3d24}
+[data-theme="light"] h1{color:#0f3d24}
+[data-theme="light"] .card-title{color:#0f3d24}
+[data-theme="light"] .chip.is-active{color:#fff}
+[data-theme="light"] .badge.status{background:rgba(138,109,31,.12)}
+[data-theme="light"] .card-sec.result{background:rgba(138,109,31,.06);border-color:rgba(138,109,31,.35)}
+:root[data-theme="dark"]{
+  --bg:#10151c; --panel:#171e28; --ink:#dde5ec; --sub:#8b98a5;
+  --accent:#57d992; --accent-soft:#1d2f26; --line:#2a3644; --note:#f2e7c9;
+}
+[data-theme="dark"] body{background:
+  linear-gradient(rgba(87,217,146,.045) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(87,217,146,.045) 1px,transparent 1px),
+  var(--bg);
+  background-size:28px 28px,28px 28px,auto}
+[data-theme="dark"] .site-header{background:rgba(87,217,146,.05)}
+[data-theme="dark"] .site-title{color:#eafff2}
+[data-theme="dark"] h1{color:#eafff2}
+[data-theme="dark"] .card-title{color:#eafff2}
+[data-theme="dark"] .chip.is-active{color:#0b2015}
+[data-theme="dark"] .badge.status{background:rgba(242,231,201,.12)}
+[data-theme="dark"] .card-sec.result{background:rgba(242,231,201,.06);border-color:rgba(242,231,201,.35)}
